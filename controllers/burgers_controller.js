@@ -5,7 +5,7 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-// make all of the routes and set up the logic
+// selects all burgers from table
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var handlebarsObject = {

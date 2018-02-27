@@ -1,6 +1,5 @@
 var connection = require("../config/connection.js");
 
-// This function is help for SQL syntax. Inspired from the cats app in the activities folder.
 
 function makeQuestionMarks(num) {
   var arr = [];
@@ -12,12 +11,10 @@ function makeQuestionMarks(num) {
   return arr.toString();
 }
 
-// This function helps to convert object key/value pairs to SQL syntax. Also
-// inspired from the cats app.
+
 function objectTomySql(ob) {
   var arr = [];
-
-  // first loop through the keys and push the key/value as a string into the arr array
+//loop through and push into array
   for (var key in ob) {
     var value = ob[key];
 
@@ -37,8 +34,7 @@ function objectTomySql(ob) {
   return arr.toString();
 }
 
-// Now, the object for all of the  mySQL statement functions
-// cb is the callback to deal with the asynchronous problem
+//cb is async call
 var orm = {
   selectAll: function(table, cb) {
     var queryString = "SELECT * FROM " + table + ";";
