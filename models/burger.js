@@ -1,24 +1,26 @@
 //require orm
 var orm = require("../config/orm.js");
 
-//call orm.all and reference burgers table
+// create the code that will call the ORM functions using the burger specific input for the ORM
+
 var burger = {
   selectAll: function(cb) {
     orm.selectAll("burgers", function(res) {
       cb(res);
     });
   },
-
-  insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
+  // The variables columns and values are arrays.
+  insertOne: function(columns, values, cb) {
+    orm.insertOne("burgers", columns, values, function(res) {
       cb(res);
     });
   },
-
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
+  updateOne: function(objColumnValue, condition, cb) {
+    orm.updateOne("burgers", objColumnValue, condition, function(res) {
       cb(res);
     });
   }
 };
+
+ //  then export the new object, burger
 module.exports = burger;

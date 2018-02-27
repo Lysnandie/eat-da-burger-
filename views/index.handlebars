@@ -1,11 +1,73 @@
-<div class="container">
+<div class="container-fluid">
+
+  <div class="row">
+
+    <img src="../assets/img/burger.jpeg" alt="burgerpic">
+
+    <h1>Eat Da Burger!</h1>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <h3>Yummy Burgers to Eat</h3>
+
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devour=true}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <h3>Burgers Already Eaten</h3>
+
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block-nobutton devour=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <h2>Type in a Burger You Would Like to Eat, then click Submit!</h2>
+
+      <div class="form">
+        <form id="createburger" class="button-size">
+          <textarea type="text" id="newname" name="burger"></textarea>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+  </div>
+
+</div>
+
+<!--<div class="container">
   <div class="row">
     <div class="col-xs-12 text-center" id="top-bar">
       <h1>EAT DA BURGER!</h1>
     </div>
     <div class="col-xs-6 text-center" class="task">
-      <div class="row">
-        <!--loop through burger data and run this code to post this.id and this.name in text element -->
+      <div class="row"> -->
+        <!--loop through burger data and run this code to post this.id and this.name in text element
         {{#each burger_data}}
           {{#unless this.devoured}}
             <div class="col-xs-9 text-center">
@@ -47,4 +109,4 @@
 
     </div>
   </div>
-</div>
+</div>-->
