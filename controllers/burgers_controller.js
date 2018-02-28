@@ -8,9 +8,9 @@ var router = express.Router();
 
 
 //redirect to index route
-router.get("/", function(req, res){
-  res.redirect('/burgers');
-})
+// router.get("/", function(req, res){
+//   res.redirect('/burgers');
+// })
 
 // selects all burgers from table
 router.get("/", function(req, res) {
