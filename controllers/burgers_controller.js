@@ -29,9 +29,11 @@ router.post("/api/burgers", function(req, res) {
     "burger_name"
   ], [
     req.body.burger_name
-  ], function() {
+  ], function(result) {
     // Send back the ID of the new burger
-    res.json({ id: result.insertId });
+    res.json({
+      id: result.insertId
+    });
     //res.redirect('/burgers');
   });
 });
