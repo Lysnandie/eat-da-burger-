@@ -31,7 +31,7 @@ router.post("/burgers/create", function(req, res) {
     req.body.burger_name
   ], function() {
     // Send back the ID of the new burger
-    //res.json({ id: result.insertId });
+    // res.json({ id: result.insertId });
     res.redirect('/burgers');
   });
 });
