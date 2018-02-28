@@ -13,7 +13,7 @@ router.get("/", function(req, res){
 })
 
 // selects all burgers from table
-router.get("/burgers", function(req, res) {
+router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var handlebarsObject = {
       burgers: data
@@ -24,19 +24,19 @@ router.get("/burgers", function(req, res) {
 });
 
 //add a burger
-router.post("/burgers/create", function(req, res) {
+router.post("/api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name"
   ], [
     req.body.burger_name
   ], function() {
     // Send back the ID of the new burger
-    // res.json({ id: result.insertId });
-    res.redirect('/burgers');
+    res.json({ id: result.insertId });
+    //res.redirect('/burgers');
   });
 });
 
-router.put("/burgers/update/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition = " + condition);

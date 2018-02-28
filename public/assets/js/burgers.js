@@ -9,7 +9,7 @@ $(function() {
 
       var currentURL = window.location.origin;
       // Send the PUT request.
-      $.ajax(currentURL + "/burgers/update" + id, {
+      $.ajax(currentURL + "/api/burgers/" + id, {
         type: "PUT",
         data: newDevourState
       }).then(
@@ -32,7 +32,7 @@ $(function() {
 
       var currentURL = window.location.origin;
       // Send the POST request.
-      $.ajax(currentURL + "/burgers/create", {
+      $.ajax(currentURL + "/api/burgers", {
         type: "POST",
         data: newBurger
       }).then(
